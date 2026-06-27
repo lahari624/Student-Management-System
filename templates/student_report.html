@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}
+Student Report
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/report.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+
+    <h1 class="page-title">Student Report</h1>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Department</th>
+                    <th>Gender</th>
+                    <th>Year</th>
+                    <th>Fee Status</th>
+                    <th>Attendance</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% if students %}
+
+                {% for row in students %}
+
+                <tr>
+
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[7] }}</td>
+                    <td>{{ row[8] }}</td>
+                    <td>{{ row[9] }}%</td>
+
+                </tr>
+
+                {% endfor %}
+
+            {% else %}
+
+                <tr>
+
+                    <td colspan="8">
+                        No Records Found
+                    </td>
+
+                </tr>
+
+            {% endif %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<div class="page-actions">
+    <a href="/dashboard" class="back-btn">
+        ← Back to Dashboard
+    </a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/report.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+
+    <h1 class="page-title">Reports Dashboard</h1>
+
+    <div class="report-grid">
+
+        <a href="/student_report" class="report-card student">
+
+            <div class="icon">👨‍🎓</div>
+
+            <h2>Student Report</h2>
+
+            <p>
+                View complete student records.
+            </p>
+
+        </a>
+
+        <a href="/department_report" class="report-card department">
+
+            <div class="icon">🏫</div>
+
+            <h2>Department Report</h2>
+
+            <p>
+                Department-wise student statistics.
+            </p>
+
+        </a>
+
+        <a href="/new_admissions_report" class="report-card admission">
+
+            <div class="icon">🆕</div>
+
+            <h2>New Admissions</h2>
+
+            <p>
+                Recently added students.
+            </p>
+
+        </a>
+
+        <a href="/students" class="report-card attendance">
+
+            <div class="icon">📈</div>
+
+            <h2>Attendance Report</h2>
+
+            <p>
+                View attendance percentages.
+            </p>
+
+        </a>
+
+        <a href="/students" class="report-card fees">
+
+            <div class="icon">💰</div>
+
+            <h2>Fee Status Report</h2>
+
+            <p>
+                Paid and pending fee details.
+            </p>
+
+        </a>
+
+        <a href="/dashboard" class="report-card dashboard">
+
+            <div class="icon">🏠</div>
+
+            <h2>Dashboard</h2>
+
+            <p>
+                Return to dashboard.
+            </p>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

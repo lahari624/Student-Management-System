@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ department }} Students
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/student.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+
+    <h1 class="page-title">
+        {{ department }} Department Students
+    </h1>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>Year</th>
+                    <th>Fee Status</th>
+                    <th>Attendance</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% if students %}
+
+                {% for row in students %}
+
+                <tr>
+
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[7] }}</td>
+                    <td>{{ row[8] }}</td>
+                    <td>{{ row[9] }}%</td>
+
+                    <td>
+
+                        <a href="/edit/{{ row[0] }}" class="edit-btn">
+                            Edit
+                        </a>
+
+                    </td>
+
+                    <td>
+
+                        <a href="/delete/{{ row[0] }}"
+                           class="delete-btn"
+                           onclick="return confirm('Delete this student?')">
+
+                            Delete
+
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            {% else %}
+
+                <tr>
+
+                    <td colspan="11" style="padding:30px;">
+                        No students found in this department.
+                    </td>
+
+                </tr>
+
+            {% endif %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<div class="page-actions">
+    <a href="/dashboard" class="back-btn">
+        ← Back to Dashboard
+    </a>
+</div>
+
+{% endblock %}

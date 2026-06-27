@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}
+Department Report
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/report.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+
+    <h1 class="page-title">
+        Department Report
+    </h1>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>S.No</th>
+                    <th>Department</th>
+                    <th>Total Students</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% if departments %}
+
+                {% for row in departments %}
+
+                <tr>
+
+                    <td>{{ loop.index }}</td>
+
+                    <td>{{ row[0] }}</td>
+
+                    <td>{{ row[1] }}</td>
+
+                </tr>
+
+                {% endfor %}
+
+            {% else %}
+
+                <tr>
+
+                    <td colspan="3">
+                        No Department Data Found
+                    </td>
+
+                </tr>
+
+            {% endif %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<div class="page-actions">
+    <a href="/dashboard" class="back-btn">
+        ← Back to Dashboard
+    </a>
+</div>
+
+{% endblock %}

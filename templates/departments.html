@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+Departments
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/department.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+
+    <h1 class="page-title">Departments</h1>
+
+    <div class="department-grid">
+
+        <a href="/department/CSE" class="department-card cse">
+            <div class="icon">💻</div>
+            <h2>CSE</h2>
+            <p>Computer Science Engineering</p>
+        </a>
+
+        <a href="/department/CSE-DS" class="department-card ds">
+            <div class="icon">📊</div>
+            <h2>CSE-DS</h2>
+            <p>Computer Science & Data Science</p>
+        </a>
+
+        <a href="/department/AI & ML" class="department-card aiml">
+            <div class="icon">🤖</div>
+            <h2>AI & ML</h2>
+            <p>Artificial Intelligence & Machine Learning</p>
+        </a>
+
+        <a href="/department/ECE" class="department-card ece">
+            <div class="icon">📡</div>
+            <h2>ECE</h2>
+            <p>Electronics & Communication</p>
+        </a>
+
+        <a href="/department/EEE" class="department-card eee">
+            <div class="icon">⚡</div>
+            <h2>EEE</h2>
+            <p>Electrical & Electronics</p>
+        </a>
+
+        <a href="/department/MECH" class="department-card mech">
+            <div class="icon">⚙️</div>
+            <h2>MECH</h2>
+            <p>Mechanical Engineering</p>
+        </a>
+
+        <a href="/department/CIVIL" class="department-card civil">
+            <div class="icon">🏗️</div>
+            <h2>CIVIL</h2>
+            <p>Civil Engineering</p>
+        </a>
+
+        <a href="/department/IT" class="department-card it">
+            <div class="icon">🌐</div>
+            <h2>IT</h2>
+            <p>Information Technology</p>
+        </a>
+
+    </div>
+
+</div>
+
+<div class="page-actions">
+    <a href="/dashboard" class="back-btn">
+        ← Back to Dashboard
+    </a>
+</div>
+
+{% endblock %}

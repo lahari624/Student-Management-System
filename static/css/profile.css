@@ -1,0 +1,169 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+}
+
+.profile-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.profile-card{
+    width:850px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+}
+
+.profile-header{
+    background:linear-gradient(135deg,#4F46E5,#7C3AED);
+    color:#fff;
+    text-align:center;
+    padding:40px;
+}
+
+.avatar{
+    width:120px;
+    height:120px;
+    margin:auto;
+    background:#fff;
+    color:#4F46E5;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.profile-header h1{
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+.profile-header p{
+    font-size:18px;
+    opacity:.9;
+}
+
+.profile-body{
+    padding:35px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.info{
+    display:flex;
+    flex-direction:column;
+}
+
+.info label{
+    font-weight:600;
+    color:#666;
+    margin-bottom:6px;
+}
+
+.info span{
+    background:#f8f8f8;
+    padding:12px;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.badge{
+    display:inline-block;
+    background:#DCFCE7;
+    color:#15803D;
+    font-weight:bold;
+    text-align:center;
+}
+
+.progress-box{
+    padding:0 35px 25px;
+}
+
+.progress-box p{
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.progress{
+    width:100%;
+    background:#ddd;
+    border-radius:30px;
+    overflow:hidden;
+    height:28px;
+}
+
+.progress-fill{
+    background:linear-gradient(90deg,#10B981,#059669);
+    color:white;
+    text-align:center;
+    line-height:28px;
+    font-weight:bold;
+    height:100%;
+}
+
+.buttons{
+    padding:30px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.edit-btn{
+    background:#4F46E5;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.edit-btn:hover{
+    background:#3730A3;
+}
+
+.back-btn{
+    background:#64748B;
+    color:white;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#475569;
+}
+
+@media(max-width:768px){
+
+.profile-card{
+    width:100%;
+}
+
+.profile-body{
+    grid-template-columns:1fr;
+}
+
+.buttons{
+    flex-direction:column;
+}
+
+.edit-btn,
+.back-btn{
+    text-align:center;
+}
+
+}

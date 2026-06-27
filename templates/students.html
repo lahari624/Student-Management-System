@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+
+{% block title %}
+Students
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/student.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="students-page">
+
+    <h1 class="page-title">
+        👨‍🎓 Students Management
+    </h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="success-msg">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="top-bar">
+
+        <form action="/students"
+              method="GET"
+              class="search-box">
+
+            <input
+                type="text"
+                name="search"
+                placeholder="Search by Name, Roll Number or Department"
+                value="{{ search }}">
+
+            <button
+                type="submit"
+                class="search-btn">
+
+                🔍 Search
+
+            </button>
+
+        </form>
+
+        <a href="/export/csv"
+           class="export-btn">
+
+            📄 Export CSV
+
+        </a>
+
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Name</th>
+
+                    <th>Roll No</th>
+
+                    <th>Email</th>
+
+                    <th>Phone</th>
+
+                    <th>Department</th>
+
+                    <th>Gender</th>
+
+                    <th>Year</th>
+
+                    <th>Fee Status</th>
+
+                    <th>Attendance</th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for row in students %}
+
+<tr>
+
+    <td>{{ row[0] }}</td>
+
+    <td>
+        <strong>{{ row[1] }}</strong>
+    </td>
+
+    <td>{{ row[2] }}</td>
+
+    <td>{{ row[3] }}</td>
+
+    <td>{{ row[4] }}</td>
+
+    <td>
+
+        <span class="department">
+
+            {{ row[5] }}
+
+        </span>
+
+    </td>
+
+    <td>{{ row[6] }}</td>
+
+    <td>{{ row[7] }}</td>
+
+    <td>
+
+        {% if row[8] == "Paid" %}
+
+            <span class="paid-badge">
+
+                ✅ Paid
+
+            </span>
+
+        {% else %}
+
+            <span class="pending-badge">
+
+                ⏳ Pending
+
+            </span>
+
+        {% endif %}
+
+    </td>
+
+    <td>
+
+        <div class="attendance">
+
+            <div class="attendance-fill"
+
+                 style="width:{{ row[9] }}%;">
+
+            </div>
+
+        </div>
+
+        <small>
+
+            {{ row[9] }}%
+
+        </small>
+
+    </td>
+
+    <td>
+
+        <div class="action-buttons">
+
+            <a href="/student/{{ row[0] }}"
+               class="view-btn">
+
+                👁 View
+
+            </a>
+
+            <a href="/edit/{{ row[0] }}"
+               class="edit-btn">
+
+                ✏ Edit
+
+            </a>
+
+            <a href="/delete/{{ row[0] }}"
+               class="delete-btn"
+               onclick="return confirm('Delete this student?')">
+
+                🗑 Delete
+
+            </a>
+
+        </div>
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+        <!-- Pagination -->
+
+        <div class="pagination">
+
+            {% if page > 1 %}
+
+            <a href="/students?page={{ page-1 }}&search={{ search }}">
+
+                ← Previous
+
+            </a>
+
+            {% endif %}
+
+            {% for p in range(1, total_pages + 1) %}
+
+                {% if p == page %}
+
+                    <span class="active-page">
+
+                        {{ p }}
+
+                    </span>
+
+                {% else %}
+
+                    <a href="/students?page={{ p }}&search={{ search }}">
+
+                        {{ p }}
+
+                    </a>
+
+                {% endif %}
+
+            {% endfor %}
+
+            {% if page < total_pages %}
+
+            <a href="/students?page={{ page+1 }}&search={{ search }}">
+
+                Next →
+
+            </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- Back Button -->
+
+    <div class="page-actions">
+
+        <a href="/dashboard"
+           class="back-btn">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

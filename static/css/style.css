@@ -1,0 +1,305 @@
+/* ==========================================
+   Student Management System
+   Global Styles
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Arial,sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    color:#333;
+}
+
+/* ==========================================
+   Layout
+========================================== */
+
+.container{
+    display:flex;
+    width:100%;
+    min-height:100vh;
+}
+
+/* ==========================================
+   Sidebar
+========================================== */
+
+.sidebar{
+    width:260px;
+    min-width:260px;
+    background:linear-gradient(180deg,#4F46E5,#3730A3);
+    color:white;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    overflow-y:auto;
+}
+
+.logo{
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:40px;
+    letter-spacing:1px;
+}
+
+/* ==========================================
+   Sidebar Links
+========================================== */
+
+.sidebar a{
+    display:block;
+    text-decoration:none;
+    color:#fff;
+    padding:14px 18px;
+    margin-bottom:12px;
+    border-radius:10px;
+    transition:.3s;
+    font-size:16px;
+}
+
+.sidebar a:hover{
+    background:rgba(255,255,255,.18);
+    transform:translateX(5px);
+}
+
+.sidebar a.active{
+    background:#fff;
+    color:#4F46E5;
+    font-weight:600;
+}
+
+/* ==========================================
+   Logout Button
+========================================== */
+
+.logout{
+    margin-top:40px;
+    background:#DC2626;
+    text-align:center;
+}
+
+.logout:hover{
+    background:#B91C1C;
+}
+
+/* ==========================================
+   Main Content
+========================================== */
+
+.main{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    min-height:100vh;
+    padding:30px;
+    background:#f5f7fb;
+}
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.btn{
+    display:inline-block;
+    padding:10px 20px;
+    background:#4F46E5;
+    color:#fff;
+    text-decoration:none;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#4338CA;
+}
+
+/* ==========================================
+   Cards
+========================================== */
+
+.card{
+    background:#fff;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* ==========================================
+   Tables
+========================================== */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#4F46E5;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:14px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+tr:hover{
+    background:#f8f9ff;
+}
+
+/* ==========================================
+   Form Elements
+========================================== */
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#4F46E5;
+    box-shadow:0 0 8px rgba(79,70,229,.2);
+}
+
+/* ==========================================
+   Flash Messages
+========================================== */
+
+.success-msg{
+    background:#D1FAE5;
+    color:#065F46;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.error-msg{
+    background:#FEE2E2;
+    color:#991B1B;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.footer{
+    text-align:center;
+    margin-top:40px;
+    color:#777;
+    font-size:14px;
+}
+
+/* ==========================================
+   Scrollbar
+========================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#4F46E5;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#4338CA;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:992px){
+
+    .sidebar{
+        width:220px;
+    }
+
+    .main{
+        margin-left:220px;
+        width:calc(100% - 220px);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+    }
+
+    .main{
+        margin-left:0;
+        width:100%;
+        padding:20px;
+    }
+
+    .container{
+        flex-direction:column;
+    }
+
+}
+
+/* Back Button */
+
+.page-actions{
+    margin-top:30px;
+    text-align:center;
+}
+
+.back-btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:#5b4bdb;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#4738c4;
+    transform:translateY(-2px);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}

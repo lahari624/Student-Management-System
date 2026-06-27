@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+
+    <h1 class="page-title">About Student Management System</h1>
+
+    <div class="about-container">
+
+        <div class="about-card">
+
+            <h2>📚 Project Overview</h2>
+
+            <p>
+                Student Management System is a web application developed using
+                Flask and MySQL to manage student records efficiently.
+                It allows administrators to add, edit, delete, search and
+                generate reports for students through a simple and user-friendly interface.
+            </p>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>✨ Main Features</h2>
+
+            <ul>
+
+                <li>✔ Dashboard with statistics</li>
+                <li>✔ Add Student</li>
+                <li>✔ Edit Student Details</li>
+                <li>✔ Delete Student</li>
+                <li>✔ Search Students</li>
+                <li>✔ Department-wise Student List</li>
+                <li>✔ Reports Dashboard</li>
+                <li>✔ Student Report</li>
+                <li>✔ Department Report</li>
+                <li>✔ New Admissions Report</li>
+                <li>✔ CSV Export</li>
+
+            </ul>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>🛠 Technologies Used</h2>
+
+            <table>
+
+                <tr>
+                    <td>Frontend</td>
+                    <td>HTML, CSS, JavaScript</td>
+                </tr>
+
+                <tr>
+                    <td>Backend</td>
+                    <td>Python Flask</td>
+                </tr>
+
+                <tr>
+                    <td>Database</td>
+                    <td>MySQL</td>
+                </tr>
+
+                <tr>
+                    <td>Charts</td>
+                    <td>Chart.js</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="about-card">
+
+            <h2>👩‍💻 Developer</h2>
+
+            <p><strong>Name:</strong> Lahari Dhanala</p>
+
+            <p><strong>Course:</strong> B.Tech - CSE (Data Science)</p>
+
+            <p><strong>Project:</strong> Student Management System</p>
+
+            <p><strong>Year:</strong> 2026</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="page-actions">
+    <a href="/dashboard" class="back-btn">
+        ← Back to Dashboard
+    </a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+ID,Name,Roll Number,Email,Phone,Department,Gender,Year,Fee Status,Attendance
+1,Rahul Sharma,CSE001,rahul@gmail.com,9876543210,CSE,Male,3rd Year,Paid,95
+2,Priya Reddy,CSEDS001,priya@gmail.com,9876543211,CSE-DS,Female,3rd Year,Paid,92
+3,Arjun Kumar,IT001,arjun@gmail.com,9876543212,IT,Male,2nd Year,Pending,88
+4,Sneha Patel,ECE001,sneha@gmail.com,9876543213,ECE,Female,1st Year,Paid,96
+5,Kiran Rao,EEE001,kiran@gmail.com,9876543214,EEE,Male,4th Year,Pending,84
+6,Anjali Verma,MECH001,anjali@gmail.com,9876543215,MECH,Female,2nd Year,Paid,91
+7,Vikas Singh,CIVIL001,vikas@gmail.com,9876543216,CIVIL,Male,3rd Year,Paid,89
+8,Neha Gupta,AI001,neha@gmail.com,9876543217,AI&ML,Female,1st Year,Pending,93
+9,Lahari,CSEDS005,dhanalalahari@gmail.com,7654323456,CSE-DS,Female,4th Year,Paid,95

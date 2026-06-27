@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        Student Management System
+        {% endblock %}
+    </title>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Page Specific CSS -->
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+{% if session.get('user') %}
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            🎓 StudentMS
+        </div>
+
+        <a href="/dashboard">🏠 Dashboard</a>
+
+        <a href="/add">➕ Add Student</a>
+
+        <a href="/students">👨‍🎓 Students</a>
+
+        <a href="/departments">🏫 Departments</a>
+
+        <a href="/courses">📚 Courses</a>
+
+        <a href="/reports">📊 Reports</a>
+
+        <a href="/about">ℹ️ About</a>
+
+        <a href="/logout" class="logout">
+            🚪 Logout
+        </a>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main">
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+</div>
+
+{% else %}
+
+{% block content_login %}
+{% endblock %}
+
+{% endif %}
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Chart Labels Plugin -->
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+<!-- Page Specific JS -->
+{% block js %}
+{% endblock %}
+
+</body>
+
+</html>

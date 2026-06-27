@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Student
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/student.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+
+    <h1 class="page-title">Edit Student</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="success-msg">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="form-container">
+
+        <form action="/update_student/{{ student[0] }}" method="POST">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Student Name</label>
+                    <input type="text" name="name" value="{{ student[1] }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Roll Number</label>
+                    <input type="text" name="roll_no" value="{{ student[2] }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" value="{{ student[3] }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="text" name="phone" value="{{ student[4] }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Department</label>
+
+                    <select name="department">
+
+                        <option {% if student[5]=='CSE' %}selected{% endif %}>CSE</option>
+                        <option {% if student[5]=='CSE-DS' %}selected{% endif %}>CSE-DS</option>
+                        <option {% if student[5]=='AI & ML' %}selected{% endif %}>AI & ML</option>
+                        <option {% if student[5]=='ECE' %}selected{% endif %}>ECE</option>
+                        <option {% if student[5]=='EEE' %}selected{% endif %}>EEE</option>
+                        <option {% if student[5]=='MECH' %}selected{% endif %}>MECH</option>
+                        <option {% if student[5]=='CIVIL' %}selected{% endif %}>CIVIL</option>
+                        <option {% if student[5]=='IT' %}selected{% endif %}>IT</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+
+                    <select name="gender">
+
+                        <option {% if student[6]=='Male' %}selected{% endif %}>Male</option>
+                        <option {% if student[6]=='Female' %}selected{% endif %}>Female</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Year</label>
+
+                    <select name="year">
+
+                        <option {% if student[7]=='1st Year' %}selected{% endif %}>1st Year</option>
+                        <option {% if student[7]=='2nd Year' %}selected{% endif %}>2nd Year</option>
+                        <option {% if student[7]=='3rd Year' %}selected{% endif %}>3rd Year</option>
+                        <option {% if student[7]=='4th Year' %}selected{% endif %}>4th Year</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Fee Status</label>
+
+                    <select name="fee_status">
+
+                        <option {% if student[8]=='Paid' %}selected{% endif %}>Paid</option>
+                        <option {% if student[8]=='Pending' %}selected{% endif %}>Pending</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Attendance (%)</label>
+
+                    <input type="number"
+                           name="attendance"
+                           value="{{ student[9] }}"
+                           min="0"
+                           max="100"
+                           required>
+
+                </div>
+
+            </div>
+
+            <button type="submit" class="submit-btn">
+                💾 Update Student
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div class="page-actions">
+    <a href="/dashboard" class="back-btn">
+        ← Back to Dashboard
+    </a>
+</div>
+
+{% endblock %}

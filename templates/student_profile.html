@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block title %}
+Student Profile
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="profile-container">
+
+    <div class="profile-card">
+
+        <div class="profile-header">
+
+            <div class="avatar">
+                👨‍🎓
+            </div>
+
+            <h1>{{ student[1] }}</h1>
+
+            <p>{{ student[5] }} Department</p>
+
+        </div>
+
+        <div class="profile-body">
+
+            <div class="info">
+
+                <label>Roll Number</label>
+
+                <span>{{ student[2] }}</span>
+
+            </div>
+
+            <div class="info">
+
+                <label>Email</label>
+
+                <span>{{ student[3] }}</span>
+
+            </div>
+
+            <div class="info">
+
+                <label>Phone</label>
+
+                <span>{{ student[4] }}</span>
+
+            </div>
+
+            <div class="info">
+
+                <label>Department</label>
+
+                <span>{{ student[5] }}</span>
+
+            </div>
+
+            <div class="info">
+
+                <label>Gender</label>
+
+                <span>{{ student[6] }}</span>
+
+            </div>
+
+            <div class="info">
+
+                <label>Year</label>
+
+                <span>{{ student[7] }}</span>
+
+            </div>
+
+            <div class="info">
+
+                <label>Fee Status</label>
+
+                <span class="badge">
+                    {{ student[8] }}
+                </span>
+
+            </div>
+
+            <div class="info">
+
+                <label>Attendance</label>
+
+                <span>{{ student[9] }}%</span>
+
+            </div>
+
+        </div>
+
+        <div class="progress-box">
+
+            <p>Attendance Progress</p>
+
+            <div class="progress">
+
+                <div class="progress-fill"
+                     style="width: {{ student[9] }}%;">
+
+                    {{ student[9] }}%
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+    <a href="/edit/{{ student[0] }}"
+       class="edit-btn">
+
+        ✏ Edit Student
+
+    </a>
+
+    <a href="/students"
+       class="back-btn">
+
+        ← Back to Students
+
+    </a>
+
+</div>
+
+    </div>
+
+</div>
+
+{% endblock %}
